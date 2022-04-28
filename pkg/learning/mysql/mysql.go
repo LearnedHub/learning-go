@@ -6,6 +6,10 @@ type LearnMySQL struct {
 	learning.Learning
 }
 
-func (mysql LearnMySQL) Learn() {
+func (learner LearnMySQL) Learn() {
 
+}
+
+func (learner LearnMySQL) Kind() string {
+	return "mysql"
 }

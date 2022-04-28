@@ -8,13 +8,13 @@ import (
 	"github.com/go-redis/redis/v8"
 )
 
-type RedisLearning struct {
+type LearnRedis struct {
 	learning.Learning
 }
 
 var ctx = context.Background()
 
-func (learn RedisLearning) Learn() {
+func (learner LearnRedis) Learn() {
 
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
@@ -43,4 +43,8 @@ func (learn RedisLearning) Learn() {
 	}
 	// Output: key value
 	// key2 does not exist
+}
+
+func (learner LearnRedis) Kind() string {
+	return "Redis"
 }
